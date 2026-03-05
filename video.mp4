@@ -1,17 +1,1 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Web Video Mika</title>
-</head>
-
-<body style="background:black;color:white;text-align:center;">
-
-<h1>🎬 Web Video Mika</h1>
-<p>Video yang bisa dilihat semua orang</p>
-
-<video width="300" controls>
-<source src="video.mp4" type="video/mp4">
-</video>
-
-</body>
-</html>
+https://youtube.com/shorts/hgIWrd63VRY?si=ofez15sUpZd7Odxf
